@@ -5,3 +5,10 @@ export const removeFeature = (item) => {
         payload: item
     }
 }
+
+export const buyItem = (item) => {
+    return {
+        type: 'BUY_ITEM',
+        payload: item
+    }
+  };
