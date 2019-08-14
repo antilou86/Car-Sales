@@ -12,7 +12,7 @@ const AdditionalFeatures = props => {
       {props.store.length ? (
         <ol type="1">
           {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} buyItem={buyItem} />
+            <AdditionalFeature key={item.id} feature={item} buyItem={props.buy} />
           ))}
         </ol>
       ) : (
@@ -26,4 +26,4 @@ const mapPropsToState = state => {
     store: state.store
   }
 }
-export default connect(mapPropsToState, {buyItem})(AdditionalFeatures)
+export default connect(mapPropsToState, {})(AdditionalFeatures)

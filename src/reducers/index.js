@@ -32,7 +32,7 @@ export const carReducer = (state = intitialState, action) => {
         case 'BUY_ITEM': {
             return {
                 ...state, car: {...state.car, features: [...state.car.features].push( state.store[action.payload.id - 1])},
-                          additionalPrice:  state.additionalPrice + state.store[action.payload - 1].price,
+                          additionalPrice:  state.additionalPrice + state.store[action.payload.id - 1].price,
             }
         }
         default: return state;

@@ -7,19 +7,13 @@ import {removeFeature} from '../actions'
 
 const AddedFeatures = props => {
 
-  const handleClick = e =>{
-    e.preventDefault();
-    props.removeFeature(props.feature.id)
-  }
-
-
   return (
     <div className="content">
       <h6>Added features:</h6>
       {props.features.length ? (
         <ol type="1">
           {props.features.map(item => (
-            <AddedFeature key={item.id} feature={item} removeFeature={handleClick}/>
+            <AddedFeature key={item.id} feature={item} removeFeature={props.remove}/>
           ))}
         </ol>
       ) : (
@@ -33,4 +27,4 @@ const mapPropsToState = state => {
     features: state.car.features
   }
 }
-export default connect(mapPropsToState, {removeFeature})(AddedFeatures)
+export default connect(mapPropsToState, {})(AddedFeatures)
