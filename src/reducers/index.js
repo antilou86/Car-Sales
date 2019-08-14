@@ -23,7 +23,7 @@ const intitialState = {
                 ([...features].splice(
                     (state.car.features.findIndex(x => x.id === action.payload)),
                         (state.car.features.findIndex(x => x.id === action.payload))
-                        )) : [...features]})}}
+                        )) : null})}}
         
           default: return state;
       }
