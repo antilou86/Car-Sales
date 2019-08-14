@@ -23,19 +23,16 @@ export const carReducer = (state = intitialState, action) => {
                     ...state.car, features: state.car.features.map(feature =>
                         feature.id === action.payload ?
                             ([...state.car.features].splice(
-                                (state.car.features.findIndex(x => x.id === action.payload)),
-                                (state.car.features.findIndex(x => x.id === action.payload))
+                                (state.car.features.findIndex(x => x.id === action.payload.id)),
+                                (state.car.features.findIndex(x => x.id === action.payload.id))
                             )) : null)
                 }
             }
         }
         case 'BUY_ITEM': {
             return {
-                ...state, car: {
-                    ...state.car,
-                    features: [...state.car.features].push(state.store[action.payload - 1]),
-                },
-                additionalPrice: { ...state.additionalPrice + state.store[action.payload - 1].price }
+                ...state, car: {...state.car, features: [...state.car.features].push( state.store[action.payload.id - 1])},
+                          additionalPrice:  state.additionalPrice + state.store[action.payload - 1].price,
             }
         }
         default: return state;
