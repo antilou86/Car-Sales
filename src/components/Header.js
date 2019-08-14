@@ -5,10 +5,10 @@ const Header = props => {
   return (
     <>
       <figure className="image is-128x128">
-        <img src={props.car.image} alt={props.car.name} />
+        <img src={props.image} alt={props.name} />
       </figure>
-      <h2>{props.car.name}</h2>
-      <p>Amount: ${props.car.price}</p>
+      <h2>{props.name}</h2>
+      <p>Amount: ${props.price}</p>
     </>
   );
 };
