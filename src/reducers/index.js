@@ -18,12 +18,12 @@ const intitialState = {
   export const carReducer = (state = intitialState, action) => {
       switch (action.type) {
           case 'REMOVE_FEATURE': {
-            return {...state.car, features: features.map(feature => {
+            return {...state, car: {...state.car, features: state.car.features.map(feature => 
                 feature.id === action.payload ? 
-                ([...features].splice(
+                ([...state.car.features].splice(
                     (state.car.features.findIndex(x => x.id === action.payload)),
                         (state.car.features.findIndex(x => x.id === action.payload))
-                        )) : null})}}
+                        )) : null)}}}
         case 'BUY_ITEM': {
             return {
                 ...state.car, features: [...state.features, state.store[action.payload-1]] 
