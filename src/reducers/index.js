@@ -24,7 +24,11 @@ const intitialState = {
                     (state.car.features.findIndex(x => x.id === action.payload)),
                         (state.car.features.findIndex(x => x.id === action.payload))
                         )) : null})}}
-        
+        case 'BUY_ITEM': {
+            return {
+                ...state.car, features: [...state.features, state.store[action.payload-1]] 
+            }
+        }
           default: return state;
-      }
+      } 
   }
