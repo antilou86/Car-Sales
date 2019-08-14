@@ -17,6 +17,14 @@ const intitialState = {
 
   export const carReducer = (state = intitialState, action) => {
       switch (action.type) {
+          case 'REMOVE_FEATURE': {
+            return {...state.car, features: features.map(feature => {
+                feature.id === action.payload ? 
+                ([...features].splice(
+                    (state.car.features.findIndex(x => x.id === action.payload)),
+                        (state.car.features.findIndex(x => x.id === action.payload))
+                        )) : [...features]})}}
+        
           default: return state;
       }
   }
