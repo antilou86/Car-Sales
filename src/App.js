@@ -34,8 +34,6 @@ const buy = item => {
   );
 };
 const mapPropsToState = state => {
-  return {
-
-  }
+  return { }
 }
 export default connect(mapPropsToState, {removeFeature, buyItem})(App);
