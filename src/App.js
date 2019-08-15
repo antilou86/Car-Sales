@@ -8,7 +8,7 @@ import {connect} from 'react-redux'
 import {removeFeature, buyItem} from './actions'
 
 
-const App = () => {
+const App = (props) => {
 
 const remove = item => {
   props.removeFeature(item)
